@@ -16,6 +16,10 @@ function console_button_height() = console_button_stub_height() + cartridge_wall
 function console_button_lip_width() = cartridge_wall_thickness();
 function console_button_lip_height() = cartridge_wall_thickness();
 
+function console_button_body_width() = 8;
+function console_button_body_length() = 8;
+function console_button_body_height() = 8;
+
 module console_button() {
   difference() {
     union() {
@@ -172,6 +176,26 @@ module console_button() {
         console_button_stub_length(),
         console_button_stub_height(),
       ]);
+    };
+  };
+
+  translate([
+    0,
+    0,
+    - console_button_body_height()
+  ]) {
+    linear_extrude(console_button_body_height()) {
+      difference() {
+        square([
+          console_button_lip_width() + console_button_length() + console_button_lip_width(),
+          console_button_lip_width() + console_button_length() + console_button_lip_width(),
+        ], center = true);
+
+        square([
+          cartridge_loose_fit_tolerance() + console_button_body_width() + cartridge_loose_fit_tolerance(),
+          cartridge_loose_fit_tolerance() + console_button_body_length() + cartridge_loose_fit_tolerance(),
+        ], center = true);
+      };
     };
   };
 };
