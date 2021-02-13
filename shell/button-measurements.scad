@@ -2,8 +2,8 @@ use <../submodules/neomura/cartridge/measurements.scad>;
 
 function console_button_throw() = 2.3;
 
-function console_button_stub_width() = 2 + cartridge_loose_fit_tolerance() * 2;
-function console_button_stub_length() = 3 + cartridge_loose_fit_tolerance() * 2;
+function console_button_stub_width() = 3 + cartridge_loose_fit_tolerance() * 2;
+function console_button_stub_length() = 2 + cartridge_loose_fit_tolerance() * 2;
 function console_button_stub_height() = 2.5 + cartridge_loose_fit_tolerance();
 
 function console_button_pixel_size() = cartridge_logo_height() / 7;
