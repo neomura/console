@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name Neomura_Cartridge)(type Legacy)(uri ${KIPRJMOD}/../submodules/neomura/cartridge/Neomura_Cartridge.lib)(options "")(descr ""))
+  (lib (name Neomura_Console)(type Legacy)(uri ${KIPRJMOD}/Neomura_Console.lib)(options "")(descr ""))
+)

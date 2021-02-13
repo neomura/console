@@ -11,7 +11,11 @@
   "files.insertFinalNewline": true,
   "files.eol": "\n",
   "files.exclude": {
+    ".DS_Store": true,
     "**/.git": true,
-    "**/.DS_Store": true
+    "**/fp-*-*": true,
+    "**/*.*-bak": true,
+    "**/*.bck": true,
+    "**/*-cache.lib": true
   }
 }
