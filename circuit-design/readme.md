@@ -50,9 +50,9 @@ The button should now press like before, but not latch.  You can check that the 
 '-----'
 ```
 
-When the switch is *not* pressed, leads 1 and 3, and 6 and 4 should be connected.  Leads 3 and 2, and 4 and 5 should *not* be connected.
+When the switch **is not** pressed, leads 1 and 3, and 6 and 4 **should** be connected.  Leads 3 and 2, and 4 and 5 **should not** be connected.
 
-When the switch is *not* pressed, leads 3 and 2, and 4 and 5 should be connected.  Leads 1 and 3, and 6 and 4 should *not* be connected.
+When the switch **is** pressed, leads 3 and 2, and 4 and 5 **should** be connected.  Leads 1 and 3, and 6 and 4 **should not** be connected.
 
 SW2 could also be omitted entirely at the cost of losing reset functionality (removal of the hole in the top half of the shell is recommended if this is done).
 
