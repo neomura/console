@@ -62,7 +62,9 @@ module console_unsplit() {
       0,
       console_pcb_top()
     ]) {
-      cartridge_slot_vertical_cutout(console_pcb_to_top() + cartridge_wall_thickness());
+      linear_extrude(console_pcb_to_top() + cartridge_wall_thickness()) {
+        cartridge_slot_vertical_cutout();
+      };
     };
 
     for (pad_position = console_pad_connector_positions()) {
