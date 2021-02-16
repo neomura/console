@@ -71,11 +71,28 @@ module console_unsplit() {
       translate([
         pad_position[0],
         pad_position[1],
-        console_pcb_top() + console_pad_connector_terminals_height() / 2,
+        console_pcb_top(),
       ]) {
         rotate([0, 0, pad_position[2]]) {
+          // Terminals.
+          translate([
+            - cartridge_loose_fit_tolerance() + console_pad_connector_terminals_square_offset() - console_pad_connector_barrel_width() / 2,
+            - cartridge_loose_fit_tolerance() - console_pad_connector_terminals_length() * 2,
+            0,
+          ]) {
+            cube([
+              cartridge_loose_fit_tolerance() - console_pad_connector_terminals_square_offset() + console_pad_connector_barrel_width() - console_pad_connector_terminals_rounded_offset() + cartridge_loose_fit_tolerance(),
+              cartridge_loose_fit_tolerance() + console_pad_connector_terminals_length() * 2 + cartridge_loose_fit_tolerance(),
+              console_pad_connector_terminals_height() * 2 + cartridge_loose_fit_tolerance(),
+            ]);
+          };
+
           // Barrel.
-          translate([0, - cartridge_loose_fit_tolerance(), 0]) {
+          translate([
+            0,
+            - cartridge_loose_fit_tolerance(),
+            console_pad_connector_terminals_height() / 2,
+          ]) {
             rotate([-90, 180, 0]) {
               linear_extrude(console_pad_connector_barrel_length()) {
                 hull() {
@@ -139,7 +156,11 @@ module console_unsplit() {
           };
 
           // Lip.
-          translate([0, console_pad_connector_barrel_length() - cartridge_loose_fit_tolerance(), 0]) {
+          translate([
+            0,
+            console_pad_connector_barrel_length() - cartridge_loose_fit_tolerance(),
+            console_pad_connector_terminals_height() / 2,
+          ]) {
             rotate([-90, 180, 0]) {
               linear_extrude(cartridge_loose_fit_tolerance() + console_pad_connector_lip_thickness() + cartridge_loose_fit_tolerance()) {
                 hull() {
@@ -184,7 +205,7 @@ module console_unsplit() {
           translate([
             0,
             console_pad_connector_barrel_length() + console_pad_connector_lip_thickness() + cartridge_loose_fit_tolerance(),
-            0,
+            console_pad_connector_terminals_height() / 2,
           ]) {
             rotate([-90, 180, 0]) {
               linear_extrude(cartridge_wall_thickness() + cartridge_loose_fit_tolerance()) {
