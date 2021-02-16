@@ -83,7 +83,7 @@ module console_unsplit() {
             cube([
               cartridge_loose_fit_tolerance() - console_pad_connector_terminals_square_offset() + console_pad_connector_barrel_width() - console_pad_connector_terminals_rounded_offset() + cartridge_loose_fit_tolerance(),
               cartridge_loose_fit_tolerance() + console_pad_connector_terminals_length() * 2 + cartridge_loose_fit_tolerance(),
-              console_pad_connector_terminals_height() * 2 + cartridge_loose_fit_tolerance(),
+              console_pad_connector_terminals_height() + cartridge_loose_fit_tolerance(),
             ]);
           };
 
