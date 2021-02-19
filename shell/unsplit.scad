@@ -296,7 +296,7 @@ module console_unsplit() {
                   - console_button_length() / 2 + console_button_pixel_size() + cartridge_engraving_radius(),
                 ]) {
                   circle(
-                    r = cartridge_engraving_radius() + console_button_pixel_size() + cartridge_loose_fit_tolerance(),
+                    r = cartridge_engraving_radius() + console_button_pixel_size() + console_button_tolerance(),
                     $fn = cartridge_engraving_sides()
                   );
                 };
@@ -306,7 +306,7 @@ module console_unsplit() {
                   - console_button_length() / 2 + console_button_pixel_size() + cartridge_engraving_radius(),
                 ]) {
                   circle(
-                    r = cartridge_engraving_radius() + console_button_pixel_size() + cartridge_loose_fit_tolerance(),
+                    r = cartridge_engraving_radius() + console_button_pixel_size() + console_button_tolerance(),
                     $fn = cartridge_engraving_sides()
                   );
                 };
@@ -316,7 +316,7 @@ module console_unsplit() {
                   console_button_length() / 2 - console_button_pixel_size() - cartridge_engraving_radius(),
                 ]) {
                   circle(
-                    r = cartridge_engraving_radius() + console_button_pixel_size() + cartridge_loose_fit_tolerance(),
+                    r = cartridge_engraving_radius() + console_button_pixel_size() + console_button_tolerance(),
                     $fn = cartridge_engraving_sides()
                   );
                 };
@@ -326,7 +326,7 @@ module console_unsplit() {
                   console_button_length() / 2 - console_button_pixel_size() - cartridge_engraving_radius(),
                 ]) {
                   circle(
-                    r = cartridge_engraving_radius() + console_button_pixel_size() + cartridge_loose_fit_tolerance(),
+                    r = cartridge_engraving_radius() + console_button_pixel_size() + console_button_tolerance(),
                     $fn = cartridge_engraving_sides()
                   );
                 };
@@ -343,7 +343,7 @@ module console_unsplit() {
                   - console_button_length() / 2 + console_button_pixel_size() + cartridge_engraving_radius(),
                 ]) {
                   circle(
-                    r = cartridge_engraving_radius() + console_button_pixel_size() + console_button_lip_width() + cartridge_loose_fit_tolerance(),
+                    r = cartridge_engraving_radius() + console_button_pixel_size() + console_button_lip_width() + console_button_tolerance(),
                     $fn = cartridge_engraving_sides()
                   );
                 };
@@ -353,7 +353,7 @@ module console_unsplit() {
                   - console_button_length() / 2 + console_button_pixel_size() + cartridge_engraving_radius(),
                 ]) {
                   circle(
-                    r = cartridge_engraving_radius() + console_button_pixel_size() + console_button_lip_width() + cartridge_loose_fit_tolerance(),
+                    r = cartridge_engraving_radius() + console_button_pixel_size() + console_button_lip_width() + console_button_tolerance(),
                     $fn = cartridge_engraving_sides()
                   );
                 };
@@ -363,7 +363,7 @@ module console_unsplit() {
                   console_button_length() / 2 - console_button_pixel_size() - cartridge_engraving_radius(),
                 ]) {
                   circle(
-                    r = cartridge_engraving_radius() + console_button_pixel_size() + console_button_lip_width() + cartridge_loose_fit_tolerance(),
+                    r = cartridge_engraving_radius() + console_button_pixel_size() + console_button_lip_width() + console_button_tolerance(),
                     $fn = cartridge_engraving_sides()
                   );
                 };
@@ -373,7 +373,7 @@ module console_unsplit() {
                   console_button_length() / 2 - console_button_pixel_size() - cartridge_engraving_radius(),
                 ]) {
                   circle(
-                    r = cartridge_engraving_radius() + console_button_pixel_size() + console_button_lip_width() + cartridge_loose_fit_tolerance(),
+                    r = cartridge_engraving_radius() + console_button_pixel_size() + console_button_lip_width() + console_button_tolerance(),
                     $fn = cartridge_engraving_sides()
                   );
                 };
