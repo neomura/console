@@ -13,3 +13,11 @@ function console_rca_jack_positions() = [
   [6.03, 23.4825, 0],
   [17.78, 23.4825, 0],
 ];
+
+function console_rca_jack_pad_diameter() = 3.5;
+function console_rca_jack_pad_positions() = [
+  [0, -4.125],
+  [0, -8.875],
+];
+
+function console_rca_jack_pocket_length() = 2.5;
