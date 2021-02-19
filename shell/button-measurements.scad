@@ -21,8 +21,8 @@ function console_button_body_length() = 8;
 function console_button_body_height() = 8;
 
 function console_button_positions() = [
-  [-19.225, -21.59, 0],
-  [19.225, -21.59, 0],
+  [-19.225, -16.8275, 0],
+  [19.225, -16.8275, 0],
 ];
 
 module console_button() {

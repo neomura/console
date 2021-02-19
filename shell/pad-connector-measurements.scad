@@ -18,8 +18,8 @@ function console_pad_connector_lip_width() = 2.25;
 function console_pad_connector_lip_thickness() = 2.05;
 
 function console_pad_connector_positions() = [
-  [-22.86, -31.75, 180],
-  [22.86, -31.75, 180],
-  [-40.005, -4.445, 90],
-  [40.005, -4.445, -90],
+  [-22.86, -26.9875, 180],
+  [22.86, -26.9875, 180],
+  [-40.005, 0.3175, 90],
+  [40.005, 0.3175, -90],
 ];

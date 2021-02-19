@@ -9,6 +9,7 @@ function console_rca_jack_position() = 6.75;
 function console_rca_jack_sides() = 64;
 
 function console_rca_jack_positions() = [
-  [0, 18.72, 0],
-  [19.225, 18.72, 0],
+  [-6.03, 23.4825, 0],
+  [6.03, 23.4825, 0],
+  [17.78, 23.4825, 0],
 ];

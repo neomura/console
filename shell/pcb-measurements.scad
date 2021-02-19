@@ -8,7 +8,7 @@ function console_pcb_to_bottom() = - console_pad_connector_terminals_height() + 
 function console_pcb_bottom() = console_foot_embed() + cartridge_wall_thickness() + console_pcb_to_bottom() + cartridge_pcb_tolerance();
 function console_pcb_top() = console_pcb_bottom() + cartridge_pcb_thickness() + cartridge_pcb_tolerance();
 
-function console_pcb_far() = 16.72;
-function console_pcb_near() = -31.75;
+function console_pcb_far() = 21.4825;
+function console_pcb_near() = -26.9875;
 function console_pcb_left() = -40.005;
 function console_pcb_right() = 40.005;
