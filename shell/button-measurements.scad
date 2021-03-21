@@ -16,8 +16,8 @@ function console_button_height() = console_button_stub_height() + cartridge_wall
 function console_button_lip_width() = cartridge_wall_thickness();
 function console_button_lip_height() = cartridge_wall_thickness();
 
-function console_button_body_width() = 8;
-function console_button_body_length() = 8;
+function console_button_body_width() = 8.125;
+function console_button_body_length() = 8.125;
 function console_button_body_height() = 8;
 
 function console_button_tolerance() = 0.3;
