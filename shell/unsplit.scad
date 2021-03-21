@@ -392,8 +392,8 @@ module console_unsplit() {
       ]) {
         rotate([0, 0, led_position[2]]) {
           translate([
-            - console_led_width() / 2 - cartridge_loose_fit_tolerance() / 2,
-            - console_led_length() / 2 - cartridge_loose_fit_tolerance() / 2,
+            - console_led_width() / 2 - cartridge_loose_fit_tolerance(),
+            - console_led_length() / 2 - cartridge_loose_fit_tolerance(),
             0,
           ]) {
             cube([
