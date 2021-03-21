@@ -252,6 +252,16 @@ intersection() {
         };
       };
     };
+    
+    translate([
+      0,
+      -8,
+      console_pcb_bottom() - cartridge_version_stamp_height(),
+    ]) {
+      rotate([0, 0, 180]) {
+        cartridge_version_stamp("CONSOLE SHELL", "BOTTOM V0.0.0"); 
+      };
+    };
   };
 
   console_unsplit();
