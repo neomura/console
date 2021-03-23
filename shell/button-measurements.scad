@@ -30,46 +30,98 @@ function console_button_positions() = [
 module console_button() {
   difference() {
     union() {
-      linear_extrude(console_button_lip_height()) {
+      translate([
+        0,
+        0,
+        -console_button_lip_height(),
+      ]) {
         hull() {
-          translate([
-            console_button_width() / 2 - console_button_pixel_size() - cartridge_engraving_radius(),
-            console_button_length() / 2 - console_button_pixel_size() - cartridge_engraving_radius(),
-          ]) {
-            circle(
-              r = cartridge_engraving_radius() + console_button_pixel_size() + console_button_lip_width(),
-              $fn = cartridge_engraving_sides()
-            );
+          linear_extrude(console_button_lip_height()) {
+            hull() {
+              translate([
+                console_button_width() / 2 - console_button_pixel_size() - cartridge_engraving_radius(),
+                console_button_length() / 2 - console_button_pixel_size() - cartridge_engraving_radius(),
+              ]) {
+                circle(
+                  r = cartridge_engraving_radius() + console_button_pixel_size() + console_button_lip_width(),
+                  $fn = cartridge_engraving_sides()
+                );
+              };
+
+              translate([
+                console_button_width() / 2 - console_button_pixel_size() - cartridge_engraving_radius(),
+                - console_button_length() / 2 + console_button_pixel_size() + cartridge_engraving_radius(),
+              ]) {
+                circle(
+                  r = cartridge_engraving_radius() + console_button_pixel_size() + console_button_lip_width(),
+                  $fn = cartridge_engraving_sides()
+                );
+              };
+
+              translate([
+                - console_button_width() / 2 + console_button_pixel_size() + cartridge_engraving_radius(),
+                console_button_length() / 2 - console_button_pixel_size() - cartridge_engraving_radius(),
+              ]) {
+                circle(
+                  r = cartridge_engraving_radius() + console_button_pixel_size() + console_button_lip_width(),
+                  $fn = cartridge_engraving_sides()
+                );
+              };
+
+              translate([
+                - console_button_width() / 2 + console_button_pixel_size() + cartridge_engraving_radius(),
+                - console_button_length() / 2 + console_button_pixel_size() + cartridge_engraving_radius(),
+              ]) {
+                circle(
+                  r = cartridge_engraving_radius() + console_button_pixel_size() + console_button_lip_width(),
+                  $fn = cartridge_engraving_sides()
+                );
+              };
+            };
           };
 
-          translate([
-            console_button_width() / 2 - console_button_pixel_size() - cartridge_engraving_radius(),
-            - console_button_length() / 2 + console_button_pixel_size() + cartridge_engraving_radius(),
-          ]) {
-            circle(
-              r = cartridge_engraving_radius() + console_button_pixel_size() + console_button_lip_width(),
-              $fn = cartridge_engraving_sides()
-            );
-          };
+          linear_extrude(console_button_lip_height() * 2) {
+            hull() {
+              translate([
+                console_button_width() / 2 - console_button_pixel_size() - cartridge_engraving_radius(),
+                console_button_length() / 2 - console_button_pixel_size() - cartridge_engraving_radius(),
+              ]) {
+                circle(
+                  r = cartridge_engraving_radius() + console_button_pixel_size(),
+                  $fn = cartridge_engraving_sides()
+                );
+              };
 
-          translate([
-            - console_button_width() / 2 + console_button_pixel_size() + cartridge_engraving_radius(),
-            console_button_length() / 2 - console_button_pixel_size() - cartridge_engraving_radius(),
-          ]) {
-            circle(
-              r = cartridge_engraving_radius() + console_button_pixel_size() + console_button_lip_width(),
-              $fn = cartridge_engraving_sides()
-            );
-          };
+              translate([
+                console_button_width() / 2 - console_button_pixel_size() - cartridge_engraving_radius(),
+                - console_button_length() / 2 + console_button_pixel_size() + cartridge_engraving_radius(),
+              ]) {
+                circle(
+                  r = cartridge_engraving_radius() + console_button_pixel_size(),
+                  $fn = cartridge_engraving_sides()
+                );
+              };
 
-          translate([
-            - console_button_width() / 2 + console_button_pixel_size() + cartridge_engraving_radius(),
-            - console_button_length() / 2 + console_button_pixel_size() + cartridge_engraving_radius(),
-          ]) {
-            circle(
-              r = cartridge_engraving_radius() + console_button_pixel_size() + console_button_lip_width(),
-              $fn = cartridge_engraving_sides()
-            );
+              translate([
+                - console_button_width() / 2 + console_button_pixel_size() + cartridge_engraving_radius(),
+                console_button_length() / 2 - console_button_pixel_size() - cartridge_engraving_radius(),
+              ]) {
+                circle(
+                  r = cartridge_engraving_radius() + console_button_pixel_size(),
+                  $fn = cartridge_engraving_sides()
+                );
+              };
+
+              translate([
+                - console_button_width() / 2 + console_button_pixel_size() + cartridge_engraving_radius(),
+                - console_button_length() / 2 + console_button_pixel_size() + cartridge_engraving_radius(),
+              ]) {
+                circle(
+                  r = cartridge_engraving_radius() + console_button_pixel_size(),
+                  $fn = cartridge_engraving_sides()
+                );
+              };
+            };
           };
         };
       };
@@ -116,6 +168,18 @@ module console_button() {
             );
           };
         };
+      };
+
+      translate([
+        - console_button_lip_width() - console_button_length() / 2,
+        - console_button_lip_width() - console_button_length() / 2,
+        - console_button_body_height()
+      ]) {
+        cube([
+          console_button_lip_width() + console_button_length() + console_button_lip_width(),
+          console_button_lip_width() + console_button_length() + console_button_lip_width(),
+          console_button_body_height(),
+        ]);
       };
     };
 
@@ -184,25 +248,17 @@ module console_button() {
         console_button_stub_height(),
       ]);
     };
-  };
 
-  translate([
-    0,
-    0,
-    - console_button_body_height()
-  ]) {
-    linear_extrude(console_button_body_height()) {
-      difference() {
-        square([
-          console_button_lip_width() + console_button_length() + console_button_lip_width(),
-          console_button_lip_width() + console_button_length() + console_button_lip_width(),
-        ], center = true);
-
-        square([
-          cartridge_loose_fit_tolerance() + console_button_body_width() + cartridge_loose_fit_tolerance(),
-          cartridge_loose_fit_tolerance() + console_button_body_length() + cartridge_loose_fit_tolerance(),
-        ], center = true);
-      };
+    translate([
+      - cartridge_loose_fit_tolerance() - console_button_body_width() / 2,
+      - cartridge_loose_fit_tolerance() - console_button_body_length() / 2,
+      - console_button_body_height()
+    ]) {
+      cube([
+        cartridge_loose_fit_tolerance() + console_button_body_width() + cartridge_loose_fit_tolerance(),
+        cartridge_loose_fit_tolerance() + console_button_body_length() + cartridge_loose_fit_tolerance(),
+        console_button_body_height(),
+      ]);
     };
   };
 };
