@@ -3,7 +3,7 @@ use <outer-measurements.scad>;
 
 function console_peg_width() = 5;
 function console_peg_length() = 10;
-function console_peg_height() = 10;
+function console_peg_height() = 3.5;
 
 function console_peg_positions() = [
   [
