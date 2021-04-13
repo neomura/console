@@ -22,7 +22,7 @@ F 1 "VIDEO (YELLOW)" H 7600 2584 50  0000 L CNN
 F 2 "Neomura_Console:RCA_Jack" H 7500 2700 50  0001 C CNN
 F 3 " ~" H 7500 2700 50  0001 C CNN
 	1    7500 2700
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L Connector:Conn_Coaxial J4
@@ -33,7 +33,7 @@ F 1 "AUDIO (WHITE)" H 7600 3184 50  0000 L CNN
 F 2 "Neomura_Console:RCA_Jack" H 7500 3300 50  0001 C CNN
 F 3 " ~" H 7500 3300 50  0001 C CNN
 	1    7500 3300
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 Text GLabel 6300 2850 2    50   Output ~ 0
 VIDEO
@@ -51,7 +51,7 @@ F 1 "GND" H 5705 4027 50  0000 C CNN
 F 2 "" H 5700 4200 50  0001 C CNN
 F 3 "" H 5700 4200 50  0001 C CNN
 	1    5700 4200
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:+5V #PWR0102
@@ -62,7 +62,7 @@ F 1 "+5V" H 2015 2023 50  0000 C CNN
 F 2 "" H 2000 1850 50  0001 C CNN
 F 3 "" H 2000 1850 50  0001 C CNN
 	1    2000 1850
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:GND #PWR0103
@@ -73,7 +73,7 @@ F 1 "GND" H 7505 3327 50  0000 C CNN
 F 2 "" H 7500 3500 50  0001 C CNN
 F 3 "" H 7500 3500 50  0001 C CNN
 	1    7500 3500
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:GND #PWR0104
@@ -84,7 +84,7 @@ F 1 "GND" H 7505 2727 50  0000 C CNN
 F 2 "" H 7500 2900 50  0001 C CNN
 F 3 "" H 7500 2900 50  0001 C CNN
 	1    7500 2900
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 Text GLabel 7300 3300 0    50   Input ~ 0
 AUDIO_L
@@ -99,7 +99,7 @@ F 1 "PAD 3" H 9606 1096 50  0000 L CNN
 F 2 "Neomura_Console:Pad_Connector" H 9900 400 50  0001 C CNN
 F 3 "" H 9900 400 50  0001 C CNN
 	1    9500 1000
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 Text GLabel 5100 3350 0    50   Output ~ 0
 PAD_LATCH
@@ -130,7 +130,7 @@ F 1 "CARTRIDGE" H 5806 2450 50  0000 L CNN
 F 2 "Neomura_Cartridge:Slot-Vertical" H 6300 1300 50  0001 C CNN
 F 3 "" H 6300 1300 50  0001 C CNN
 	1    5200 2450
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:GND #PWR0105
@@ -141,7 +141,7 @@ F 1 "GND" H 9505 1627 50  0000 C CNN
 F 2 "" H 9500 1800 50  0001 C CNN
 F 3 "" H 9500 1800 50  0001 C CNN
 	1    9500 1800
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:+5V #PWR0106
@@ -152,7 +152,7 @@ F 1 "+5V" H 5715 2623 50  0000 C CNN
 F 2 "" H 5700 2450 50  0001 C CNN
 F 3 "" H 5700 2450 50  0001 C CNN
 	1    5700 2450
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:+5V #PWR0107
@@ -162,8 +162,8 @@ F 0 "#PWR0107" H 9500 750 50  0001 C CNN
 F 1 "+5V" H 9515 1073 50  0000 C CNN
 F 2 "" H 9500 900 50  0001 C CNN
 F 3 "" H 9500 900 50  0001 C CNN
-	1    9500 900 
-	1    0    0    -1  
+	1    9500 900
+	1    0    0    -1
 $EndComp
 $Comp
 L Neomura_Console:Controller_Port J8
@@ -174,7 +174,7 @@ F 1 "PAD 2" H 7656 1146 50  0000 L CNN
 F 2 "Neomura_Console:Pad_Connector" H 7950 450 50  0001 C CNN
 F 3 "" H 7950 450 50  0001 C CNN
 	1    7550 1050
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 Text GLabel 8000 1450 2    50   Input ~ 0
 PAD_CLOCK
@@ -193,7 +193,7 @@ F 1 "GND" H 7555 1677 50  0000 C CNN
 F 2 "" H 7550 1850 50  0001 C CNN
 F 3 "" H 7550 1850 50  0001 C CNN
 	1    7550 1850
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:+5V #PWR0109
@@ -203,8 +203,8 @@ F 0 "#PWR0109" H 7550 800 50  0001 C CNN
 F 1 "+5V" H 7565 1123 50  0000 C CNN
 F 2 "" H 7550 950 50  0001 C CNN
 F 3 "" H 7550 950 50  0001 C CNN
-	1    7550 950 
-	1    0    0    -1  
+	1    7550 950
+	1    0    0    -1
 $EndComp
 $Comp
 L Neomura_Console:Controller_Port J7
@@ -215,7 +215,7 @@ F 1 "PAD 1" H 5706 1146 50  0000 L CNN
 F 2 "Neomura_Console:Pad_Connector" H 6000 450 50  0001 C CNN
 F 3 "" H 6000 450 50  0001 C CNN
 	1    5600 1050
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 Text GLabel 6050 1450 2    50   Input ~ 0
 PAD_CLOCK
@@ -234,7 +234,7 @@ F 1 "GND" H 5605 1677 50  0000 C CNN
 F 2 "" H 5600 1850 50  0001 C CNN
 F 3 "" H 5600 1850 50  0001 C CNN
 	1    5600 1850
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:+5V #PWR0111
@@ -244,8 +244,8 @@ F 0 "#PWR0111" H 5600 800 50  0001 C CNN
 F 1 "+5V" H 5615 1123 50  0000 C CNN
 F 2 "" H 5600 950 50  0001 C CNN
 F 3 "" H 5600 950 50  0001 C CNN
-	1    5600 950 
-	1    0    0    -1  
+	1    5600 950
+	1    0    0    -1
 $EndComp
 $Comp
 L Neomura_Console:Controller_Port J6
@@ -256,7 +256,7 @@ F 1 "PAD 0" H 3756 1146 50  0000 L CNN
 F 2 "Neomura_Console:Pad_Connector" H 4050 450 50  0001 C CNN
 F 3 "" H 4050 450 50  0001 C CNN
 	1    3650 1050
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 Text GLabel 4100 1450 2    50   Input ~ 0
 PAD_CLOCK
@@ -275,7 +275,7 @@ F 1 "GND" H 3655 1677 50  0000 C CNN
 F 2 "" H 3650 1850 50  0001 C CNN
 F 3 "" H 3650 1850 50  0001 C CNN
 	1    3650 1850
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:+5V #PWR0113
@@ -285,8 +285,8 @@ F 0 "#PWR0113" H 3650 800 50  0001 C CNN
 F 1 "+5V" H 3665 1123 50  0000 C CNN
 F 2 "" H 3650 950 50  0001 C CNN
 F 3 "" H 3650 950 50  0001 C CNN
-	1    3650 950 
-	1    0    0    -1  
+	1    3650 950
+	1    0    0    -1
 $EndComp
 $Comp
 L power:GND #PWR0114
@@ -297,7 +297,7 @@ F 1 "GND" H 1205 1777 50  0000 C CNN
 F 2 "" H 1200 1950 50  0001 C CNN
 F 3 "" H 1200 1950 50  0001 C CNN
 	1    1200 1950
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 NoConn ~ 1850 1650
 NoConn ~ 1850 1100
@@ -306,11 +306,11 @@ L Device:R R1
 U 1 1 6026EAC1
 P 2300 1850
 F 0 "R1" V 2093 1850 50  0000 C CNN
-F 1 "240R" V 2184 1850 50  0000 C CNN
+F 1 "4.7K" V 2184 1850 50  0000 C CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 2230 1850 50  0001 C CNN
 F 3 "~" H 2300 1850 50  0001 C CNN
 	1    2300 1850
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L Device:LED D1
@@ -321,7 +321,7 @@ F 1 "LED" V 2398 1882 50  0000 R CNN
 F 2 "LED_THT:LED_Rectangular_W5.0mm_H2.0mm" H 2450 2000 50  0001 C CNN
 F 3 "~" H 2450 2000 50  0001 C CNN
 	1    2450 2000
-	0    -1   -1   0   
+	0    -1   -1   0
 $EndComp
 $Comp
 L power:GND #PWR0115
@@ -332,7 +332,7 @@ F 1 "GND" H 2455 1977 50  0000 C CNN
 F 2 "" H 2450 2150 50  0001 C CNN
 F 3 "" H 2450 2150 50  0001 C CNN
 	1    2450 2150
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L Switch:SW_DPDT_x2 SW2
@@ -343,7 +343,7 @@ F 1 "RESET_SW" H 1150 2994 50  0000 C CNN
 F 2 "Neomura_Console:BS800L" H 1150 2800 50  0001 C CNN
 F 3 "~" H 1150 2800 50  0001 C CNN
 	1    1150 2800
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 NoConn ~ 1350 2700
 Text GLabel 950  3400 0    50   BiDi ~ 0
@@ -359,7 +359,7 @@ F 1 "POWER" H 957 2076 50  0000 C CNN
 F 2 "Connector_BarrelJack:BarrelJack_Horizontal" H 950 1810 50  0001 C CNN
 F 3 "~" H 950 1810 50  0001 C CNN
 	1    900  1850
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 Wire Wire Line
 	1200 1750 1450 1750
@@ -386,7 +386,7 @@ F 1 "AUDIO (RED)" H 7600 3784 50  0000 L CNN
 F 2 "Neomura_Console:RCA_Jack" H 7500 3900 50  0001 C CNN
 F 3 " ~" H 7500 3900 50  0001 C CNN
 	1    7500 3900
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:GND #PWR0117
@@ -397,7 +397,7 @@ F 1 "GND" H 7505 3927 50  0000 C CNN
 F 2 "" H 7500 4100 50  0001 C CNN
 F 3 "" H 7500 4100 50  0001 C CNN
 	1    7500 4100
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 Text GLabel 7300 3900 0    50   Input ~ 0
 AUDIO_R
@@ -417,7 +417,7 @@ F 1 "POWER_SW" H 1650 1394 50  0000 C CNN
 F 2 "Neomura_Console:BS800L" H 1650 1200 50  0001 C CNN
 F 3 "~" H 1650 1200 50  0001 C CNN
 	1    1650 1200
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L Switch:SW_DPDT_x2 SW1
@@ -428,7 +428,7 @@ F 1 "POWER_SW" H 1650 1944 50  0000 C CNN
 F 2 "Neomura_Console:BS800L" H 1650 1750 50  0001 C CNN
 F 3 "~" H 1650 1750 50  0001 C CNN
 	2    1650 1750
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 NoConn ~ 1850 1300
 NoConn ~ 1450 1200
@@ -438,9 +438,9 @@ Wire Wire Line
 	2150 1850 2000 1850
 Connection ~ 2000 1850
 Wire Notes Line
-	2800 2450 2800 750 
+	2800 2450 2800 750
 Wire Notes Line
-	2800 750  600  750 
+	2800 750  600  750
 $Comp
 L Switch:SW_DPDT_x2 SW2
 U 2 1 60272C0D
@@ -450,7 +450,7 @@ F 1 "RESET_SW" H 1150 3594 50  0000 C CNN
 F 2 "Neomura_Console:BS800L" H 1150 3400 50  0001 C CNN
 F 3 "~" H 1150 3400 50  0001 C CNN
 	2    1150 3400
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 NoConn ~ 1350 2900
 NoConn ~ 950  2800
