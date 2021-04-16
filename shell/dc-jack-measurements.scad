@@ -1,4 +1,5 @@
 use <../submodules/neomura/cartridge/measurements.scad>;
+use <pad-connector-measurements.scad>;
 
 function console_dc_jack_body_width() = 9;
 function console_dc_jack_body_length() = 13.8;
@@ -12,7 +13,11 @@ function console_dc_jack_position() = 6.6;
 function console_dc_jack_sides() = 48;
 
 function console_dc_jack_positions() = [
-  [17.78, 23.0825, 180],
+  [
+    console_pad_connector_positions()[0][0],
+    23.0825,
+    180,
+  ],
 ];
 
 function console_dc_jack_pad_diameter() = 3.5;

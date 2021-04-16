@@ -5,7 +5,7 @@ use <foot-measurements.scad>;
 use <dc-jack-measurements.scad>;
 
 function console_pcb_to_top() = console_pad_connector_pcb_distance() + console_pad_connector_height();
-function console_pcb_to_bottom() = console_pad_connector_peg_height() - cartridge_pcb_thickness() - console_pad_connector_pcb_distance();
+function console_pcb_to_bottom() = console_pad_connector_peg_height() - cartridge_pcb_tolerance() - cartridge_pcb_thickness() - cartridge_pcb_tolerance() - console_pad_connector_pcb_distance();
 function console_pcb_bottom() = cartridge_wall_thickness() + console_pcb_to_bottom() + cartridge_pcb_tolerance();
 function console_pcb_top() = console_pcb_bottom() + cartridge_pcb_thickness() + cartridge_pcb_tolerance();
 

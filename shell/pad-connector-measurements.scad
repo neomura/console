@@ -4,7 +4,7 @@ function console_pad_connector_width() = 25;
 function console_pad_connector_height() = 16.5;
 function console_pad_connector_length() = 14.25;
 function console_pad_connector_radius() = 2.5;
-function console_pad_connector_sides() = 24;
+function console_pad_connector_sides() = 32;
 function console_pad_connector_wing_height() = 6.25;
 function console_pad_connector_wing_width() = 2.5;
 function console_pad_connector_wing_thickness() = 2.25;
@@ -19,10 +19,11 @@ function console_pad_connector_pcb_distance() = 0.7;
 function console_pad_connector_terminals_width() = 16;
 function console_pad_connector_terminals_height() = 12.1;
 function console_pad_connector_terminals_length() = 9;
+function console_pad_connector_spacing() = console_pad_connector_width() + console_pad_connector_wing_width() + cartridge_loose_fit_tolerance() + console_pad_connector_wing_width();
 
 function console_pad_connector_positions() = [
-  [console_pad_connector_width() * -1.5 + console_pad_connector_wing_width() * -3 + cartridge_loose_fit_tolerance() * -1.5, -42, 180],
-  [console_pad_connector_width() / -2 + -console_pad_connector_wing_width() + cartridge_loose_fit_tolerance() / -2, -42, 180],
-  [console_pad_connector_width() / 2 + console_pad_connector_wing_width() + cartridge_loose_fit_tolerance() / 2, -42, 180],
-  [console_pad_connector_width() * 1.5 + console_pad_connector_wing_width() * 3 + cartridge_loose_fit_tolerance() * 1.5, -42, 180],
+  [console_pad_connector_spacing() * -1.5, -35, 180],
+  [console_pad_connector_spacing() * -0.5, -35, 180],
+  [console_pad_connector_spacing() * 0.5, -35, 180],
+  [console_pad_connector_spacing() * 1.5, -35, 180],
 ];

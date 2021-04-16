@@ -45,7 +45,7 @@ intersection() {
       console_pcb_top() + console_pcb_to_top() + cartridge_wall_thickness() - cartridge_engraving_depth(),
     ]) {
       linear_extrude(cartridge_engraving_depth() + 0.001) {
-        translate([0, -27]) {
+        translate([0, -22]) {
           difference() {
             hull() {
               translate([16.75, cartridge_logo_height() / 2]) {
@@ -614,11 +614,11 @@ intersection() {
     };
 
     translate([
-      -31.5,
-      4,
+      30.5,
+      1.5,
       console_pcb_top() + cartridge_pcb_tolerance() + cartridge_version_stamp_height(),
     ]) {
-      rotate([0, 180, 90]) {
+      rotate([0, 180, 270]) {
         cartridge_version_stamp("CONSOLE SHELL", "TOP V0.0.0");
   };
     };

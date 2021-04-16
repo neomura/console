@@ -11,6 +11,7 @@ use <dc-jack-measurements.scad>;
 use <button-measurements.scad>;
 use <foot-measurements.scad>;
 use <label-measurements.scad>;
+use <slot-measurements.scad>;
 
 intersection() {
   difference() {
@@ -89,8 +90,13 @@ intersection() {
       0,
       console_pcb_bottom() - console_pcb_to_bottom(),
     ]) {
-      linear_extrude(console_pcb_to_bottom()) {
-        cartridge_slot_vertical_solder_joint_cutout();
+      linear_extrude(console_pcb_to_bottom() + cartridge_pcb_tolerance() + cartridge_pcb_thickness()) {
+        translate([
+          console_slot_x(),
+          console_slot_y(),
+        ]) {
+          cartridge_slot_vertical_solder_joint_cutout();
+        };
 
         for (pad_position = console_pad_connector_positions()) {
           translate([
@@ -193,6 +199,16 @@ intersection() {
         for (rca_jack_position = console_rca_jack_positions()) {
           translate([rca_jack_position[0], rca_jack_position[1]]) {
             rotate(rca_jack_position[2]) {
+              translate([
+                - cartridge_loose_fit_tolerance() -console_rca_jack_body_width() / 2,
+                -console_rca_jack_pocket_length(),
+              ]) {
+                square([
+                  cartridge_loose_fit_tolerance() + console_rca_jack_body_width() + cartridge_loose_fit_tolerance(),
+                  console_rca_jack_pocket_length() + cartridge_loose_fit_tolerance(),
+                ]);
+              };
+
               for (pad_position = console_rca_jack_pad_positions()) {
                 translate(pad_position) {
                   square(console_rca_jack_pad_diameter(), center = true);
@@ -251,12 +267,10 @@ intersection() {
 
     translate([
       0,
-      -8,
+      8,
       console_pcb_bottom() - cartridge_version_stamp_height(),
     ]) {
-      rotate([0, 0, 180]) {
-        cartridge_version_stamp("CONSOLE SHELL", "BOTTOM V0.0.0");
-      };
+      cartridge_version_stamp("CONSOLE SHELL", "BOTTOM V0.0.0");
     };
   };
 

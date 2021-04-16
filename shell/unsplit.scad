@@ -9,6 +9,7 @@ use <resistor-measurements.scad>;
 use <pcb-measurements.scad>;
 use <dc-jack-measurements.scad>;
 use <outer-measurements.scad>;
+use <slot-measurements.scad>;
 
 module console_unsplit() {
   difference() {
@@ -58,8 +59,8 @@ module console_unsplit() {
     };
 
     translate([
-      0,
-      0,
+      console_slot_x(),
+      console_slot_y(),
       console_pcb_top()
     ]) {
       linear_extrude(console_pcb_to_top() + cartridge_wall_thickness()) {
