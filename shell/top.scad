@@ -5,23 +5,22 @@ use <pcb-measurements.scad>;
 use <outer-measurements.scad>;
 use <rca-jack-measurements.scad>;
 use <unsplit.scad>;
-use <peg-measurements.scad>;
 use <button-measurements.scad>;
 use <dc-jack-measurements.scad>;
 
 intersection() {
   difference() {
     union() {
-      // The main block for pad connectors.
+      // The main block.
       translate([
         console_outer_left(),
         console_outer_near(),
-        console_pcb_top() + console_pad_connector_terminals_height() / 2,
+        console_pcb_top() + console_rca_jack_position(),
       ]) {
         cube([
           - console_outer_left() + console_outer_right(),
           - console_outer_near() + console_outer_far(),
-          console_pcb_to_top() + cartridge_wall_thickness() - console_pad_connector_terminals_height() / 2,
+          10000,
         ]);
       };
 
@@ -39,38 +38,6 @@ intersection() {
       };
     };
 
-    // Cutout for back wall for jacks.
-    translate([
-      console_outer_left() + cartridge_wall_thickness()  + cartridge_wall_thickness(),
-      console_outer_far() - cartridge_wall_thickness(),
-      console_pcb_top(),
-    ]) {
-      cube([
-        - console_outer_left() - cartridge_wall_thickness() - cartridge_wall_thickness() - cartridge_wall_thickness() - cartridge_wall_thickness() + console_outer_right(),
-        cartridge_wall_thickness(),
-        console_rca_jack_position(),
-      ]);
-    };
-
-    // Cutouts for pegs.
-    for (peg_position = console_peg_positions()) {
-      translate([peg_position[0], peg_position[1], 0]) {
-        rotate([0, 0, peg_position[2]]) {
-          translate([
-            - cartridge_loose_fit_tolerance() - console_peg_width() / 2,
-            - cartridge_loose_fit_tolerance() - console_peg_length() / 2,
-            console_pcb_top() + console_pad_connector_terminals_height() / 2,
-          ]) {
-            cube([
-              cartridge_loose_fit_tolerance() + console_peg_width() + cartridge_loose_fit_tolerance(),
-              cartridge_loose_fit_tolerance() + console_peg_length() + cartridge_loose_fit_tolerance(),
-              console_peg_height() + cartridge_loose_fit_tolerance(),
-            ]);
-          };
-        };
-      };
-    };
-
     // Top engravings.
     translate([
       0,
@@ -78,22 +45,22 @@ intersection() {
       console_pcb_top() + console_pcb_to_top() + cartridge_wall_thickness() - cartridge_engraving_depth(),
     ]) {
       linear_extrude(cartridge_engraving_depth() + 0.001) {
-        translate([0, -31.2275]) {
+        translate([0, -27]) {
           difference() {
             hull() {
-              translate([12, cartridge_logo_height() / 2]) {
+              translate([16.75, cartridge_logo_height() / 2]) {
                 circle(r = cartridge_engraving_radius(), $fn = cartridge_engraving_sides());
               };
 
-              translate([12, - cartridge_logo_height() / 2]) {
+              translate([16.75, - cartridge_logo_height() / 2]) {
                 circle(r = cartridge_engraving_radius(), $fn = cartridge_engraving_sides());
               };
 
-              translate([-12, cartridge_logo_height() / 2]) {
+              translate([-16.75, cartridge_logo_height() / 2]) {
                 circle(r = cartridge_engraving_radius(), $fn = cartridge_engraving_sides());
               };
 
-              translate([-12, - cartridge_logo_height() / 2]) {
+              translate([-16.75, - cartridge_logo_height() / 2]) {
                 circle(r = cartridge_engraving_radius(), $fn = cartridge_engraving_sides());
               };
             };
@@ -225,9 +192,9 @@ intersection() {
         };
 
         console_edge_badge([
-          console_outer_left(),
-          console_pad_connector_positions()[2][1],
-          -90,
+          console_pad_connector_positions()[2][0],
+          console_outer_near(),
+          0,
         ]) {
           // Top left.
           translate([
@@ -308,9 +275,9 @@ intersection() {
         };
 
         console_edge_badge([
-          console_outer_right(),
-          console_pad_connector_positions()[3][1],
-          90,
+          console_pad_connector_positions()[3][0],
+          console_outer_near(),
+          0,
         ]) {
           // Vertical bar.
           translate([

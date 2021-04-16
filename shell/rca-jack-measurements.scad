@@ -9,9 +9,9 @@ function console_rca_jack_position() = 6.25;
 function console_rca_jack_sides() = 64;
 
 function console_rca_jack_positions() = [
-  [-6.03, 23.4825, 0],
-  [6.03, 23.4825, 0],
-  [17.78, 23.4825, 0],
+  [-6.03, 21.4825, 0],
+  [6.03, 21.4825, 0],
+  [17.78, 21.4825, 0],
 ];
 
 function console_rca_jack_pad_diameter() = 3.5;

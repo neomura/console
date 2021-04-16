@@ -1,4 +1,5 @@
 use <../submodules/neomura/cartridge/measurements.scad>;
+use <outer-measurements.scad>;
 
 function console_button_throw() = 2.3;
 
@@ -9,8 +10,8 @@ function console_button_stub_height() = 2.5 + cartridge_loose_fit_tolerance();
 function console_button_pixel_size() = cartridge_logo_height() / 7;
 function console_button_pixel_push() = 0.075;
 
-function console_button_width() = console_button_pixel_size() + cartridge_engraving_radius() + cartridge_engraving_radius() + console_button_pixel_size() * 30 + cartridge_engraving_radius() + cartridge_engraving_radius() + console_button_pixel_size();
 function console_button_length() = console_button_pixel_size() + cartridge_engraving_radius() + cartridge_logo_height() + cartridge_engraving_radius() + console_button_pixel_size();
+function console_button_width() = console_button_pixel_size() + cartridge_engraving_radius() + cartridge_engraving_radius() + console_button_pixel_size() * 30 + cartridge_engraving_radius() + cartridge_engraving_radius() + console_button_pixel_size();
 function console_button_height() = console_button_stub_height() + cartridge_wall_thickness() + console_button_throw();
 
 function console_button_lip_width() = cartridge_wall_thickness();
@@ -23,8 +24,8 @@ function console_button_body_height() = 8;
 function console_button_tolerance() = 0.3;
 
 function console_button_positions() = [
-  [-19.225, -16.8275, 0],
-  [19.225, -16.8275, 0],
+  [-19.225, -14.8275, 0],
+  [19.225, -14.8275, 0],
 ];
 
 module console_button() {

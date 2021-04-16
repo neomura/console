@@ -74,176 +74,99 @@ module console_unsplit() {
         console_pcb_top(),
       ]) {
         rotate([0, 0, pad_position[2]]) {
-          // Terminals.
-          translate([
-            - cartridge_loose_fit_tolerance() + console_pad_connector_terminals_square_offset() - console_pad_connector_barrel_width() / 2,
-            - cartridge_loose_fit_tolerance() - console_pad_connector_terminals_length() * 2,
-            0,
-          ]) {
-            cube([
-              cartridge_loose_fit_tolerance() - console_pad_connector_terminals_square_offset() + console_pad_connector_barrel_width() - console_pad_connector_terminals_rounded_offset() + cartridge_loose_fit_tolerance(),
-              cartridge_loose_fit_tolerance() + console_pad_connector_terminals_length() * 2 + cartridge_loose_fit_tolerance(),
-              console_pad_connector_terminals_height() + cartridge_loose_fit_tolerance(),
-            ]);
-          };
-
-          // Barrel.
-          translate([
-            0,
-            - cartridge_loose_fit_tolerance(),
-            console_pad_connector_terminals_height() / 2,
-          ]) {
-            rotate([-90, 180, 0]) {
-              linear_extrude(console_pad_connector_barrel_length()) {
+          translate([0, cartridge_wall_thickness(), 0]) {
+            rotate([90, 0, 0]) {
+              linear_extrude(console_pad_connector_length() + cartridge_loose_fit_tolerance()) {
                 hull() {
-                  // The rounded end.
                   translate([
-                    - console_pad_connector_barrel_width() / 2 + console_pad_connector_barrel_height() / 2,
-                    0,
+                    console_pad_connector_width() / -2 + console_pad_connector_radius(),
+                    console_pad_connector_pcb_distance() + console_pad_connector_radius(),
                   ]) {
                     circle(
-                      d = cartridge_loose_fit_tolerance() + console_pad_connector_barrel_height() + cartridge_loose_fit_tolerance(),
-                      $fn = console_pad_connector_barrel_rounded_sides()
+                      r = console_pad_connector_radius() + cartridge_loose_fit_tolerance(),
+                      $fn = console_pad_connector_sides()
                     );
                   };
 
-                  // The bottom of the square end.
                   translate([
-                    console_pad_connector_barrel_width() / 2 - console_pad_connector_barrel_radius(),
-                    - console_pad_connector_barrel_height() / 2 + console_pad_connector_barrel_radius(),
+                    console_pad_connector_width() / 2 - console_pad_connector_radius(),
+                    console_pad_connector_pcb_distance() + console_pad_connector_radius(),
                   ]) {
                     circle(
-                      r = console_pad_connector_barrel_radius() + cartridge_loose_fit_tolerance(),
-                      $fn = console_pad_connector_barrel_radius_sides()
+                      r = console_pad_connector_radius() + cartridge_loose_fit_tolerance(),
+                      $fn = console_pad_connector_sides()
                     );
                   };
 
-                  // The top of the square end.
                   translate([
-                    console_pad_connector_barrel_width() / 2 - console_pad_connector_barrel_radius(),
-                    console_pad_connector_barrel_height() / 2 - console_pad_connector_barrel_radius(),
+                    console_pad_connector_width() / -2 + console_pad_connector_radius(),
+                    console_pad_connector_pcb_distance() + console_pad_connector_height() - console_pad_connector_radius(),
                   ]) {
                     circle(
-                      r = console_pad_connector_barrel_radius() + cartridge_loose_fit_tolerance(),
-                      $fn = console_pad_connector_barrel_radius_sides()
-                    );
-                  };
-                };
-
-                // The notch near the rounded end.
-                translate([
-                  - console_pad_connector_barrel_width() / 2 - cartridge_loose_fit_tolerance() + console_pad_connector_barrel_notch_rounded(),
-                  - console_pad_connector_barrel_height() / 2 - console_pad_connector_barrel_notch_height() - cartridge_loose_fit_tolerance(),
-                ]) {
-                  square([
-                    cartridge_loose_fit_tolerance() + console_pad_connector_barrel_notch_width() + cartridge_loose_fit_tolerance(),
-                    cartridge_loose_fit_tolerance() + console_pad_connector_barrel_notch_height() + console_pad_connector_barrel_height() + console_pad_connector_barrel_notch_height() + cartridge_loose_fit_tolerance(),
-                  ]);
-                };
-
-                // The notch near the square end.
-                translate([
-                  console_pad_connector_barrel_width() / 2 - cartridge_loose_fit_tolerance() - console_pad_connector_barrel_notch_square() - console_pad_connector_barrel_notch_width(),
-                  - console_pad_connector_barrel_height() / 2 - console_pad_connector_barrel_notch_height() - cartridge_loose_fit_tolerance(),
-                ]) {
-                  square([
-                    cartridge_loose_fit_tolerance() + console_pad_connector_barrel_notch_width() + cartridge_loose_fit_tolerance(),
-                    cartridge_loose_fit_tolerance() + console_pad_connector_barrel_notch_height() + console_pad_connector_barrel_height() + console_pad_connector_barrel_notch_height() + cartridge_loose_fit_tolerance(),
-                  ]);
-                };
-              };
-            };
-          };
-
-          // Lip.
-          translate([
-            0,
-            console_pad_connector_barrel_length() - cartridge_loose_fit_tolerance(),
-            console_pad_connector_terminals_height() / 2,
-          ]) {
-            rotate([-90, 180, 0]) {
-              linear_extrude(cartridge_loose_fit_tolerance() + console_pad_connector_lip_thickness() + cartridge_loose_fit_tolerance()) {
-                hull() {
-                  // The rounded end.
-                  translate([
-                    - console_pad_connector_barrel_width() / 2 + console_pad_connector_barrel_height() / 2,
-                    0,
-                  ]) {
-                    circle(
-                      d = cartridge_loose_fit_tolerance() + console_pad_connector_lip_width() + console_pad_connector_barrel_height() + console_pad_connector_lip_width() + cartridge_loose_fit_tolerance(),
-                      $fn = console_pad_connector_barrel_rounded_sides()
+                      r = console_pad_connector_radius() + cartridge_loose_fit_tolerance(),
+                      $fn = console_pad_connector_sides()
                     );
                   };
 
-                  // The bottom of the square end.
                   translate([
-                    console_pad_connector_barrel_width() / 2 - console_pad_connector_barrel_radius(),
-                    - console_pad_connector_barrel_height() / 2 + console_pad_connector_barrel_radius(),
+                    console_pad_connector_width() / 2 - console_pad_connector_radius(),
+                    console_pad_connector_pcb_distance() + console_pad_connector_height() - console_pad_connector_radius(),
                   ]) {
                     circle(
-                      r = console_pad_connector_barrel_radius() + console_pad_connector_lip_width() + cartridge_loose_fit_tolerance(),
-                      $fn = console_pad_connector_barrel_radius_sides()
-                    );
-                  };
-
-                  // The top of the square end.
-                  translate([
-                    console_pad_connector_barrel_width() / 2 - console_pad_connector_barrel_radius(),
-                    console_pad_connector_barrel_height() / 2 - console_pad_connector_barrel_radius(),
-                  ]) {
-                    circle(
-                      r = console_pad_connector_barrel_radius() + console_pad_connector_lip_width() + cartridge_loose_fit_tolerance(),
-                      $fn = console_pad_connector_barrel_radius_sides()
+                      r = console_pad_connector_radius() + cartridge_loose_fit_tolerance(),
+                      $fn = console_pad_connector_sides()
                     );
                   };
                 };
               };
             };
-          };
 
-          // Front opening.
-          translate([
-            0,
-            console_pad_connector_barrel_length() + console_pad_connector_lip_thickness() + cartridge_loose_fit_tolerance(),
-            console_pad_connector_terminals_height() / 2,
-          ]) {
-            rotate([-90, 180, 0]) {
-              linear_extrude(cartridge_wall_thickness() + cartridge_loose_fit_tolerance()) {
-                hull() {
-                  // The rounded end.
-                  translate([
-                    - console_pad_connector_barrel_width() / 2 + console_pad_connector_barrel_height() / 2,
-                    0,
-                  ]) {
-                    circle(
-                      d = cartridge_loose_fit_tolerance() + console_pad_connector_barrel_height() + cartridge_loose_fit_tolerance(),
-                      $fn = console_pad_connector_barrel_rounded_sides()
-                    );
-                  };
+            translate([
+              - cartridge_loose_fit_tolerance() + console_pad_connector_terminals_width() / -2,
+              - console_pad_connector_terminals_length() - console_pad_connector_length() - cartridge_loose_fit_tolerance(),
+              0,
+            ]) {
+              cube([
+                cartridge_loose_fit_tolerance() + console_pad_connector_terminals_width() + cartridge_loose_fit_tolerance(),
+                console_pad_connector_terminals_length(),
+                console_pad_connector_terminals_height() + cartridge_loose_fit_tolerance(),
+              ]);
+            };
 
-                  // The bottom of the square end.
-                  translate([
-                    console_pad_connector_barrel_width() / 2 - console_pad_connector_barrel_radius(),
-                    - console_pad_connector_barrel_height() / 2 + console_pad_connector_barrel_radius(),
-                  ]) {
-                    circle(
-                      r = console_pad_connector_barrel_radius() + cartridge_loose_fit_tolerance(),
-                      $fn = console_pad_connector_barrel_radius_sides()
-                    );
-                  };
+            translate([
+              - cartridge_loose_fit_tolerance() + console_pad_connector_width() / -2,
+              - console_pad_connector_length() - cartridge_loose_fit_tolerance(),
+              0,
+            ]) {
+              cube([
+                cartridge_loose_fit_tolerance() + console_pad_connector_width() + cartridge_loose_fit_tolerance(),
+                console_pad_connector_length() - cartridge_wall_thickness() + cartridge_loose_fit_tolerance(),
+                console_pad_connector_pcb_distance() + console_pad_connector_height() / 2,
+              ]);
+            };
 
-                  // The top of the square end.
-                  translate([
-                    console_pad_connector_barrel_width() / 2 - console_pad_connector_barrel_radius(),
-                    console_pad_connector_barrel_height() / 2 - console_pad_connector_barrel_radius(),
-                  ]) {
-                    circle(
-                      r = console_pad_connector_barrel_radius() + cartridge_loose_fit_tolerance(),
-                      $fn = console_pad_connector_barrel_radius_sides()
-                    );
-                  };
-                };
-              };
+            translate([
+              console_pad_connector_width() / 2 + cartridge_loose_fit_tolerance(),
+              -console_pad_connector_front_wing_front() - cartridge_loose_fit_tolerance() - console_pad_connector_wing_thickness() - cartridge_loose_fit_tolerance(),
+              0,
+            ]) {
+              cube([
+                console_pad_connector_wing_width() + cartridge_loose_fit_tolerance(),
+                cartridge_loose_fit_tolerance() + console_pad_connector_wing_thickness() + cartridge_loose_fit_tolerance(),
+                console_pad_connector_pcb_distance() + console_pad_connector_bottom_wing_bottom() + console_pad_connector_wing_height() + cartridge_loose_fit_tolerance(),
+              ]);
+            };
+
+            translate([
+              console_pad_connector_width() / -2 - cartridge_loose_fit_tolerance() - console_pad_connector_wing_width() - cartridge_loose_fit_tolerance(),
+              -console_pad_connector_front_wing_front() - cartridge_loose_fit_tolerance() - console_pad_connector_wing_thickness() - cartridge_loose_fit_tolerance(),
+              0,
+            ]) {
+              cube([
+                console_pad_connector_wing_width() + cartridge_loose_fit_tolerance(),
+                cartridge_loose_fit_tolerance() + console_pad_connector_wing_thickness() + cartridge_loose_fit_tolerance(),
+                console_pad_connector_pcb_distance() + console_pad_connector_bottom_wing_bottom() + console_pad_connector_wing_height() + cartridge_loose_fit_tolerance(),
+              ]);
             };
           };
         };

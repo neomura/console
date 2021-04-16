@@ -1,25 +1,28 @@
 use <../submodules/neomura/cartridge/measurements.scad>;
 
-function console_pad_connector_terminals_length() = 3.1;
-function console_pad_connector_terminals_rounded_offset() = 3.6;
-function console_pad_connector_terminals_square_offset() = 4.1;
-function console_pad_connector_terminals_height() = 4.1;
-function console_pad_connector_barrel_width() = 38.6;
-function console_pad_connector_barrel_height() = 12.1;
-function console_pad_connector_barrel_length() = 12;
-function console_pad_connector_barrel_radius() = 1.75;
-function console_pad_connector_barrel_rounded_sides() = 64;
-function console_pad_connector_barrel_radius_sides() = 16;
-function console_pad_connector_barrel_notch_square() = 7.5;
-function console_pad_connector_barrel_notch_rounded() = 7.2;
-function console_pad_connector_barrel_notch_width() = 1.7;
-function console_pad_connector_barrel_notch_height() = 1.12;
-function console_pad_connector_lip_width() = 2.25;
-function console_pad_connector_lip_thickness() = 2.05;
+function console_pad_connector_width() = 25;
+function console_pad_connector_height() = 16.5;
+function console_pad_connector_length() = 14.25;
+function console_pad_connector_radius() = 2.5;
+function console_pad_connector_sides() = 24;
+function console_pad_connector_wing_height() = 6.25;
+function console_pad_connector_wing_width() = 2.5;
+function console_pad_connector_wing_thickness() = 2.25;
+function console_pad_connector_front_wing_front() = 2.85;
+function console_pad_connector_bottom_wing_bottom() = 5.95;
+function console_pad_connector_peg_diameter() = 4.5;
+function console_pad_connector_peg_height() = 6;
+function console_pad_connector_peg_spacing() = 19.75;
+function console_pad_connector_peg_inset() = 7.6;
+function console_pad_connector_peg_sides() = 24;
+function console_pad_connector_pcb_distance() = 0.7;
+function console_pad_connector_terminals_width() = 16;
+function console_pad_connector_terminals_height() = 12.1;
+function console_pad_connector_terminals_length() = 9;
 
 function console_pad_connector_positions() = [
-  [-22.86, -26.9875, 180],
-  [22.86, -26.9875, 180],
-  [-40.005, 0.3175, 90],
-  [40.005, 0.3175, -90],
+  [console_pad_connector_width() * -1.5 + console_pad_connector_wing_width() * -3 + cartridge_loose_fit_tolerance() * -1.5, -42, 180],
+  [console_pad_connector_width() / -2 + -console_pad_connector_wing_width() + cartridge_loose_fit_tolerance() / -2, -42, 180],
+  [console_pad_connector_width() / 2 + console_pad_connector_wing_width() + cartridge_loose_fit_tolerance() / 2, -42, 180],
+  [console_pad_connector_width() * 1.5 + console_pad_connector_wing_width() * 3 + cartridge_loose_fit_tolerance() * 1.5, -42, 180],
 ];
