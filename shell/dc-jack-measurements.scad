@@ -12,7 +12,7 @@ function console_dc_jack_position() = 6.6;
 function console_dc_jack_sides() = 48;
 
 function console_dc_jack_positions() = [
-  [-17.78, 23.0825, 180],
+  [17.78, 23.0825, 180],
 ];
 
 function console_dc_jack_pad_diameter() = 3.5;
